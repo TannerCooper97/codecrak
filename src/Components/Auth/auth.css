@@ -1,0 +1,116 @@
+ 
+body{
+    background-color: #292828;
+}
+
+.LoginPage{
+    font-family: 'Inconsolata';
+    background-color: #292828;
+}
+
+#LoginHeader{
+    font-size: 100px;
+    color: #17D988;
+}
+
+#welcome{
+    font-size: 50px;
+    color: #C2E00E;
+}
+
+.loginfont{
+    color: #8B60EC;
+    padding-right: 25px;
+}
+
+#username-Box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#password-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-box{
+    height: 30%;
+    width: 25%;
+}
+
+#ButtonBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Buttonz{
+    width: 20%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 100px;
+    width: 150px;
+    background-color: #5F6DEC;
+    color: black;
+}
+
+
+
+
+@media only screen and (min-width: 411px) {
+    
+    #LoginHeader{
+        font-size: 75px;
+    }
+
+    #welcome{
+        font-size: 25px;
+        color: #C2E00E;
+    }
+
+    .loginfont{
+        font-size: 20px;
+        color: #8B60EC;
+        padding-right: 10px;
+    }
+
+    .input-box{
+        height: 30%;
+        width: 45%;
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    #LoginHeader{
+        font-size: 150px;
+        color: #17D988;
+    }
+
+    .loginfont{
+        color: #8B60EC;
+        padding-right: 25px;
+        font-size: 50px;
+    }
+
+    #welcome{
+        font-size: 50px;
+        color: #C2E00E;
+    }
+    
+    .input-box{
+        height: 30%;
+        width: 10%;
+    }
+    
+    
+    .Buttonz{
+        width: 5%;
+        padding: 10px;
+        margin: 10px;
+    }
+}

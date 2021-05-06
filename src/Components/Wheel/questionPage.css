@@ -1,0 +1,34 @@
+.QPage{
+    font-family: 'Inconsolata';
+    background-color: #292828;
+    justify-content: center;
+}
+
+
+.questionTextColor{
+    color: #C2E00E;
+}
+
+.questionTypeHeader{
+    color: #BF00BF;
+    
+}
+
+.AnswerTextColor{
+color: #C4C4C4;
+}
+
+.AnswerBox{
+    margin: 40px;
+    padding-right: 7%;
+}
+
+.AnswerButtonz{
+    background-color: #BF0000;
+    width: 10%;
+    padding: 5px;
+    border-radius: 100px;
+    width: 100px;
+    background-color: #5F6DEC;
+    color: black;
+}

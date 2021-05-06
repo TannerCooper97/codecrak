@@ -1,0 +1,21 @@
+:root {
+    --app-font: 'Inconsolata';
+    --neutral-color: white;
+  }
+  
+  .App {
+    font-family: var('--app-font');
+    text-align: center;
+    background: var(--neutral-color);
+    user-select: none;
+    
+  }
+
+  .questionWheel{
+    font-family: 'Inconsolata';
+    background-color: #292828;
+  }
+
+  #SpinTheWheel{
+    color: #C2E00E;
+  }

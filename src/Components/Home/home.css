@@ -1,0 +1,48 @@
+.Home{
+    font-family: 'Inconsolata';
+    background-color: #292828;
+}
+
+/* #ButtonzContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    size: 10%;
+    background-color: red;
+} */
+#homeButtonz{
+    width: 10%;
+    padding: 5px;
+    border-radius: 100px;
+    width: 100px;
+    background-color: #5F6DEC;
+    color: black;
+    font-size: 5px;
+    margin: 5px;
+}
+
+#playButton{
+    width: 10%;
+    padding: 5px;
+    border-radius: 100px;
+    width: 100px;
+    background-color: #5F6DEC;
+    color: black;
+    font-size: 5px;
+}
+
+.textColor{
+    color: #C2E00E;
+    list-style-type:none;
+    justify-content: center;
+}
+
+.LeaderBoards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#list{
+    padding-right: 40px;
+}
