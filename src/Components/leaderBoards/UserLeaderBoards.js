@@ -10,8 +10,6 @@ function UserLeaderBoards() {
         getAllHighscoresDispatch()
     }, [])
 
-   
-
     const highscoreData = useSelector((state) => state.users.highscores);
 
 

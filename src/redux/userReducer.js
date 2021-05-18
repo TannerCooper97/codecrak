@@ -4,10 +4,12 @@ const initialState = {
   aboutMe: "",
   highscore: 0,
   highscores: [],
-  currentHighScore: 0
+  currentHighScore: 0,
+  message: ''
 };
 
 const UPDATE_USER = "UPDATE_USER";
+const GET_USER = 'GET_USER';
 const GET_ALL_HIGHSCORES = "GET_ALL_HIGHSCORES";
 const LOGOUT = "LOGOUT";
 const UPDATE_CURRENT_HIGHSCORE = "UPDATE_CURRENT_HIGHSCORE";
@@ -18,8 +20,10 @@ const UPDATE_USER_PROFILE_PIC = "UPDATE_USER_PROFILE_PIC";
 export default function (state = initialState, action) {
   let { type, payload } = action;
   switch (type) {
-    case UPDATE_USER + "_PENDING":
-      return { ...state, isLoading: true };
+    // case UPDATE_USER + "_PENDING":
+    //   return { ...state, isLoading: true };
+    case GET_USER:
+            return {...state, user: payload}
     case UPDATE_USER + "_FULFILLED":
       return {
         ...state,
@@ -61,9 +65,16 @@ export default function (state = initialState, action) {
       return initialState;
     default:
       return state;
+      
   }
 }
 
+export function getUser(payload){
+  return{
+      type: GET_USER,
+      payload: payload
+  }
+}
 
 export function updateUser(user) {
   return {
@@ -80,6 +91,7 @@ export function getAllHighscores(highscores){
 }
 
 export function logoutUser() {
+  console.log('Got Here')
   return {
     type: LOGOUT,
   };

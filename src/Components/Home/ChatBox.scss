@@ -1,0 +1,112 @@
+.chat {
+    width: 50vw;
+    height: 50vh;
+    z-index: 2;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #70e2f1;
+    background: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    flex-direction: column;
+    margin-left: 25%;
+  }
+
+  .chat-title {
+    flex: 0 1 45px;
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.2);
+    color: black;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 10px 10px 10px 50px;
+    
+    h1, h2 {
+      font-weight: normal;
+      font-size: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    
+    h2 {
+      color: rgba(255, 255, 255, .5);
+      font-size: 8px;
+      letter-spacing: 1px;
+    }
+}
+
+.messages {
+  flex: 1 1 auto;
+  color: Black;
+  position: relative;
+  width: 100%;
+  
+  & .messages-content {
+    position: absolute;
+    padding-top: 15px;
+    left: 0;
+    height: 101%;
+    width: 100%;
+  }
+
+  
+  .message {
+    clear: both;
+    float: left;
+    padding: 6px 10px 7px;
+    border-radius: 10px 10px 10px 0;
+    background: rgba(0, 0, 0, .3);
+    margin: 8px 0;
+    font-size: 11px;
+    line-height: 1.4;
+    margin-left: 35px;
+    position: relative;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+
+  }
+}
+
+.message-box {
+    flex: 0 1 40px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    position: relative;
+    
+    & .message-input {
+      display:flex;    
+      background: none;
+      border: none;
+      outline: none!important;
+      resize: none;
+      color: black;
+      font-size: 11px;
+      height: 17px;
+      margin: 0;
+      padding-right: 900px;
+      width: 265px;
+    }
+
+    & .message-submit {
+        position: absolute;
+        z-index: 1;
+        top: 20px;
+        right: 50px;
+        color: #fff;
+        border: none;
+        background: red;
+        font-size: 10px;
+        text-transform: uppercase;
+        line-height: 1;
+        padding: 6px 10px; 
+        border-radius: 10px;
+        outline: none!important;
+        transition: background .2s ease;
+        
+        &:hover {
+          background: #1D7745;
+        }
+    }
+}

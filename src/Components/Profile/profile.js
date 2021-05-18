@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './profile.css';
 import {Link} from 'react-router-dom';
 import {useSelector} from 'react-redux';
-import Editable from "./Editable";
+import axios from 'axios';
+
 
 function profile(){
 
@@ -10,9 +11,35 @@ function profile(){
     const wholeUser = useSelector((state) => state.users)
 
     // [aboutMe, setAboutme] = useState();
+    const [editView, setEditView] = useState(false)
+    const [userInfo, setUserInfo] = useState(
+      {
+        aboutMe: wholeUser?.aboutMe
+      }
+    );
 
-    function editAboutMe(){
-        updateUserAboutMe(aboutMe);
+    useEffect(() => {
+      if(wholeUser) {
+        setUserInfo({
+          aboutMe: wholeUser?.aboutMe
+        })
+      }
+    }, [wholeUser])
+
+    const handleChange = (e) => {
+      console.log(wholeUser)
+      setUserInfo({...wholeUser, [e.target.name]:e.target.value})
+    }
+
+    const handleSubmit = (e) => {
+    e.preventDefault()
+    setEditView(!editView)
+    
+    axios.put('auth/aboutMeUpdate', userInfo)
+      .then(res => {
+        updateUserAboutMe(res.data)
+      })
+      .catch(err => console.log(err))
     }
    
     return(
@@ -20,11 +47,14 @@ function profile(){
             <body>
             <h1 id='WelcomeHeader'> Welcome, {username} </h1>
             <img src={profilePic} alt={username} />
-            <h3 class='TextColor'>About Me</h3>
-            <p class='TextColor'>{aboutMe}</p>
+            <h3 className='TextColor'>About Me</h3>
+            {editView ? <form onSubmit={handleSubmit}><input onChange={handleChange} name="about_me" placeholder={wholeUser?.aboutMe}/></form>: null}
+            <p className='TextColor'>{aboutMe}</p>
+            <button onClick={() => setEditView(!editView)} id='homeButtonz'>Edit About Me</button>
             <p id='HighScoreColor'>High Score: {highscore}</p>
             <Link to= '/home' ><button id='homeButtonz'>Back</button></Link>
             </body>
+            
         </div>
     )
 }

@@ -4,9 +4,13 @@ import {Link} from 'react-router-dom';
 import UserLeaderBoards from '../leaderBoards/UserLeaderBoards';
 import {useSelector} from 'react-redux'
 import {Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
+import ChatBox from './ChatBox';
+import axios from 'axios';
 import {logoutUserDispatch} from '../../redux/userService';
+import {logoutUser} from '../../redux/userReducer';
 
-function home(){
+function home(props){
 
     const currentUsername = useSelector((state) => state.users.username)
 
@@ -14,6 +18,10 @@ function home(){
         console.log('Redirecting');
         return <Redirect to={'/'}/>
     }
+
+    
+
+    
     return(
         <div className="Home">
             <body>
@@ -24,15 +32,22 @@ function home(){
             
             <Link to='/profile/:id'><button id='homeButtonz' >Profile</button></Link>
             <br/>
-            <Link to= '/'><button id='homeButtonz'>Logout</button></Link>
+            <button id='homeButtonz'>Logout</button>
 
             <p class='textColor'>How far can you go?</p>
             <Link to='/wheel'><button id='playButton'>Play</button></Link>
 
             <UserLeaderBoards class='leaderboards' />
-
+            
             </body>
+            <ChatBox/>
             
         </div>
     )
-} export default home;
+} const mapStateToProps = (stateRedux) => {
+    return {
+        user: stateRedux.users.user
+    }
+}
+
+export default connect(mapStateToProps, {logoutUser})(home);
